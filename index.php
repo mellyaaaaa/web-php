@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko liya</title>
+    <title>Toko Yadi</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
@@ -66,22 +66,35 @@
             </tbody>
         </table>
     </div>
-    <div class="col-md-3">
+    <div class="container my-5">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="card-body">
+                    <h3>Total Belanja</h3>
 
-        <div class="card">
-            <div class="card-body">
-                <h3>Total Belanja</h3>
+                    <p>Total Harga: Rp<?php echo number_format($total_harga); ?></p>
 
-                <p>Total Harga: Rp<?php echo number_format($total_harga); ?></p>
-
-                 <?php if($total_diskon > 0): ?>
+                    <?php if($total_diskon > 0): ?>
                     <p>  
-                   Total Diskon: Rp<?php echo number_format($total_diskon); ?>
+                    Total Diskon: Rp<?php echo number_format($total_diskon); ?>
                     </p>
-                <?php endif; ?>
+                    <?php endif; ?>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                    <div class="card-body">
+                        <h4>Total Bayar</h4>
+                        <p>
+                        Rp. <?php echo number_format($total_harga - $total_diskon); ?>
+                        </p>
+                        <div class="row mb-3">
+                                <button type="Submit" class="btn btn-primary">Bayar</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
     </div>
 
 </body>
